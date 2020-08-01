@@ -7,15 +7,15 @@ void main() {
   ));
 }
 
-class TutorialHome extends StatelessWidget{
+class TutorialHome extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            icon: Icon(Icons.menu),
-            tooltip: 'Navigation menu',
-            onPressed: null,
+          icon: Icon(Icons.menu),
+          tooltip: 'Navigation menu',
+          onPressed: null,
         ),
         title: Text('Example'),
         actions: <Widget>[
@@ -33,38 +33,15 @@ class TutorialHome extends StatelessWidget{
         tooltip: 'add',
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: 
+            borderRadius: BorderRadius.circular(15.0),
+            color: Colors.blue,
+            image: null,
           ),
         ),
-        onPressed: (){
+        onPressed: () {
           print('Button was taped');
         },
       ),
     );
   }
 }
-class MyButton extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return GestureDetector(
-      onTap: () {
-        print('Tapped');
-      },
-      child: Container(
-        height: 20,
-        padding: const EdgeInsets.all(10.0),
-        margin: const EdgeInsets.symmetric(horizontal: 10.0),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5.0),
-          color: Colors.lightGreen[500],
-        ),
-        child: Center(
-          child: Text('Engage'),
-        ),
-      ),
-    );
-  }
-}
-
-
