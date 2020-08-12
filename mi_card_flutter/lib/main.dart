@@ -10,7 +10,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.teal,
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () {
+            print('Button Pressed');
+          },
+        ),
+        backgroundColor: Colors.blue,
         body: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -32,59 +38,51 @@ class MyApp extends StatelessWidget {
                 'Flutter Developer',
                 style: TextStyle(
                   fontSize: 30.0,
-                  color: Colors.teal.shade100,
+                  color: Colors.blue.shade50,
                   fontFamily: 'Source Sans Pro',
                   letterSpacing: 0.5,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Container(
-                padding: EdgeInsets.all(10.0),
-                color: Colors.white,
-                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-                child: Row(
-                  children: <Widget>[
-                    Icon(
-                      Icons.phone,
-                      color: Colors.teal,
-                      size: 25.0,
-                    ),
-                    SizedBox(
-                      width: 30.0,
-                    ),
-                    Text(
-                        '+55 99887766',
-                        style: TextStyle(
-                          color: Colors.teal.shade900,
-                          fontFamily: 'Source Sans Pro',
-                          fontSize: 20.0,
-                        ),
-                    ),
-                  ],
+              SizedBox(
+                height: 20.0,
+                width: 350.0,
+                child: Divider(
+                  color: Colors.blue.shade50,
                 ),
               ),
-              Container(
-                padding: EdgeInsets.all(10.0),
-                color: Colors.white,
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.blue,
+                  ),
+                  title: Text(
+                    '+55 51 99778866',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.blue.shade800,
+                      fontFamily: 'Source Sans Pro',
+                    ),
+                  ),
+                ),
+              ),
+              Card(
                 margin: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                child: Row(
-                  children: <Widget>[
-                    Icon(
-                      Icons.email,
-                      color: Colors.teal,
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.blue,
+                  ),
+                  title: Text(
+                    'volnei@email.com',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.blue.shade800,
+                      fontFamily: 'Source Sans Pro',
                     ),
-                    SizedBox(
-                      width: 30.0,
-                    ),
-                    Text(
-                      'volnei@gmail.com',
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        color: Colors.teal.shade900,
-                        fontFamily: 'Source Sans Pro',
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ],
