@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(
@@ -9,7 +12,15 @@ void main() => runApp(
 class BallPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Ball();
+    return Scaffold(
+      backgroundColor: Colors.blue,
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.blue.shade900,
+        title: Text('Ask Me Something'),
+      ),
+      body: Ball(),
+    );
   }
 }
 
@@ -19,10 +30,19 @@ class Ball extends StatefulWidget {
 }
 
 class _BallState extends State<Ball> {
+  int ballNumber = 1;
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Image.asset('images/ball1.png'),
+    return Center(
+      child: FlatButton(
+        onPressed: (){
+          setState(() {
+            ballNumber = Random().nextInt(5) + 1;
+          });
+          print(ballNumber);
+        },
+        child: Image.asset('images/ball$ballNumber.png'),
+      ),
     );
   }
 }
