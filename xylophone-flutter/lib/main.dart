@@ -14,7 +14,7 @@ class XylophoneApp extends StatelessWidget {
             child: FlatButton(
               onPressed: (){
                 final player = AudioCache();
-                player.play('note1');
+                player.play('note1.wav');
               },
               child: Text('Press here'),
             ),
