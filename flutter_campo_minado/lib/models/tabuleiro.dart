@@ -1,8 +1,6 @@
 import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
-
-import 'campo.dart';
+import 'package:flutter/material.dart';
+import '../models/campo.dart';
 
 class Tabuleiro {
   final int linhas;
@@ -10,10 +8,11 @@ class Tabuleiro {
   final int qtdBomnbas;
   final List<Campo> _campos = [];
 
-  Tabuleiro(
-      {@required this.linhas,
-      @required this.colunas,
-      @required this.qtdBomnbas}) {
+  Tabuleiro({
+    @required this.linhas,
+    @required this.colunas,
+    @required this.qtdBomnbas,
+  }) {
     _criarCampos();
     _relacionarVizinhos();
     _sortearMinas();

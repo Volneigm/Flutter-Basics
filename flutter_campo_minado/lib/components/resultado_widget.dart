@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_campo_minado/models/tabuleiro.dart';
 
 class ResultadoWidget extends StatelessWidget implements PreferredSizeWidget {
-  bool venceu;
+  final bool venceu;
   final Function onReiniciar;
 
   ResultadoWidget({
-    this.venceu,
-    this.onReiniciar,
+    @required this.venceu,
+    @required this.onReiniciar,
   });
 
   Color _getCor() {
